@@ -81,3 +81,4 @@ Thumbs.db
 *.pem
 *.p12
 .secrets/
+CLAUDE.md
