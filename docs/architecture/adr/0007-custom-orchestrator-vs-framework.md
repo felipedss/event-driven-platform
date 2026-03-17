@@ -1,4 +1,4 @@
-## ADR-0006: Custom Step-Based Orchestrator vs Framework
+## ADR-0007: Custom Step-Based Orchestrator vs Framework
 
 **Status:** Pending — to be decided after Phase 2 custom implementation is complete (see ADR-0005)
 

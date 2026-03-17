@@ -1,4 +1,4 @@
-## ADR-0005: Phased Saga Implementation — Basic First, Step-Based Later
+## ADR-0006: Phased Saga Implementation — Basic First, Step-Based Later
 
 **Status:** Accepted
 
