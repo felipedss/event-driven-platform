@@ -69,6 +69,12 @@ Each stage has a clear responsibility, a structured input, a structured output, 
 - **Input:** outputs from the previous three stages.
 - **Responsibility:** generate a concise, human-readable explanation for an engineer describing what happened, where the saga failed, relevant system state, and a possible recovery action.
 
+### Scope of Analysis
+
+The analyzer may inspect failed, timed-out, manually reviewed, or otherwise suspicious saga executions (see ADR-0015 for how timeouts and manual review are currently surfaced).
+
+A long-lived intermediate state must not be classified as a failure solely based on elapsed time unless the workflow defines an explicit timeout or SLA for that state. Some steps are legitimately slow (e.g., waiting on a downstream provider) without being abnormal. Timeline Reconstruction and Failure Classification must treat "still in progress" and "stuck" as distinct conclusions, and only report the latter when an explicit timeout/SLA for that state has been exceeded or another concrete signal (e.g., an error event, a DLQ entry, a manual-review flag) indicates an abnormal execution.
+
 ### Invocation
 
 The analyzer is exposed as an on-demand operation, triggered explicitly by an engineer rather than automatically on every saga event. Conceptually:
