@@ -66,3 +66,11 @@ Each ADR includes:
 - Alternatives considered
 
 This ensures transparency and traceability in architectural evolution.
+
+Concrete implementation plans for ADRs live alongside them:
+
+```code
+docs/architecture/implementation-plans/
+```
+
+Each plan lays out the file-by-file approach for turning an ADR's decision into code — package structure, key classes, config, error handling, and a suggested build order — before implementation begins.
